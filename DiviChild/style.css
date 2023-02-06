@@ -1,0 +1,63 @@
+/*
+
+Theme Name: Divi Child Theme
+Theme URI: http://www.ir3w.com/
+Description: A Custom Child Theme For Divi Theme
+Author: Steve Fry
+Author URI: http://www.ir3w.com/
+Template: Divi
+Version: 1.0
+
+*/
+
+
+.mycontainer {
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
+	margin: 0 auto;
+	padding: 18px 0;
+	text-align: center;
+	border: 1px dotted #333;
+}
+
+.mycontainer h2 {
+	padding-top: 18px;
+}
+.mycontainer .head {
+	font-weight: 700;
+	border-bottom: 1px solid #999;
+}
+
+.mycontainer > div.date {
+	flex: 40%;
+}
+.mycontainer > div.beds {
+	flex: 60%;
+}
+
+
+/* footer */
+#footer-bottom {
+	display: none;
+}
+
+/* mobile styles */
+
+/* full width home page header */
+@media (max-width: 1300px) {
+
+}
+
+/* ***** iPad Pro ***** */
+@media (max-width: 1025px) {}
+
+/*  ***** iPad ***** */
+@media (max-width: 769px) {
+
+}
+
+/*  ***** iPhones ***** */
+@media (max-width: 415px) {
+
+}
