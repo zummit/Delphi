@@ -18,15 +18,19 @@ Version: 1.0
 	margin: 0 auto;
 	padding: 18px 0;
 	text-align: center;
-	border: 1px dotted #333;
+	border: 1px dotted #333 !important;
 }
 
 .mycontainer h2 {
-	padding-top: 18px;
+	padding: 12px 0 12px 0;
 }
 .mycontainer .head {
 	font-weight: 700;
 	border-bottom: 1px solid #999;
+}
+
+.mycontainer .shade {
+	background-color: rgba(173,0,0,0.05);
 }
 
 .mycontainer > div.date {
@@ -36,6 +40,27 @@ Version: 1.0
 	flex: 60%;
 }
 
+.mycontainer > div.date.last,
+.mycontainer > div.beds.last {
+	height: 1px;
+	border-bottom: 1px solid #333;
+	margin-bottom: 18px;
+}
+
+/* presentation styles */
+pre {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	border: 1px dotted #999;
+	width: 80%;
+	margin: 0.5em auto 1em auto;
+}
+.presentation ul li {
+	margin-bottom: 1em;
+}
 
 /* footer */
 #footer-bottom {
@@ -44,13 +69,13 @@ Version: 1.0
 
 /* mobile styles */
 
-/* full width home page header */
-@media (max-width: 1300px) {
-
-}
 
 /* ***** iPad Pro ***** */
-@media (max-width: 1025px) {}
+@media (max-width: 1025px) {
+	.mycontainer {
+		width: 80%;
+	}
+}
 
 /*  ***** iPad ***** */
 @media (max-width: 769px) {
@@ -59,5 +84,15 @@ Version: 1.0
 
 /*  ***** iPhones ***** */
 @media (max-width: 415px) {
-
+	.mycontainer {
+		width: 100%;
+	}
+	.mycontainer h2 {
+		font-size: 1em;
+		padding: 8px 0 18px 0;
+	}
+	.mycontainer .head {
+		font-size: 0.9em;
+		line-height: 1.3em;
+	}
 }
