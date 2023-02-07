@@ -57,7 +57,7 @@ function mytheme_et_project_posttype_args( $args ) {
 
 
 //======================================================================
-// LOUISVILLE TEST
+// Delphi Center for Teaching and Learning task
 //======================================================================
 
 function get_api_data($atts) {
