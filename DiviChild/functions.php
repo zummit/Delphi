@@ -38,7 +38,7 @@ function add_slug_body_class( $classes ) {
 }
 add_filter( 'body_class', 'add_slug_body_class' );
 
-// Remove “Projects” custom post type from Divi
+// Remove Â“Projects custom post type from Divi
 // https://dividezigns.com/handy-divi-snippets/#24
 add_filter( 'et_project_posttype_args', 'mytheme_et_project_posttype_args', 10, 1 );
 function mytheme_et_project_posttype_args( $args ) {
@@ -112,6 +112,12 @@ function get_api_data($atts) {
 			// loop over each record
 			foreach ($responseObj as $key => $eachObject) {
 
+				if($i%2 == 0) {
+					$strAddStyle = " shade";
+				} else {
+					$strAddStyle = "";
+				}
+
 				//$strState = $eachObject->state;
 				$strDate = $eachObject->collection_date;
 				//$strDate = date_format($strDate, "F d, Y");	// can't do this because the date is in Floating Timestamp Datatype
@@ -128,22 +134,22 @@ function get_api_data($atts) {
 				$strStaffQty = $eachObject->staffed_adult_icu_beds_occupied_est;
 				$intStaffQtyTotal = $intStaffQtyTotal + $strStaffQty;
 
-				$strHTML .= "<div class=\"date\">" . $strDateRebuilt . "</div>";
-				$strHTML .= "<div class=\"beds\">" . $strStaffQty . "</div>";
+				$strHTML .= "<div class=\"date" . $strAddStyle . "\">" . $strDateRebuilt . "</div>";
+				$strHTML .= "<div class=\"beds" . $strAddStyle . "\">" . $strStaffQty . "</div>";
 
 				$i++;
 
 			}
 
-			$strHTML .= "<div class=\"date\"><hr/></div>";
-			$strHTML .= "<div class=\"beds\"><hr/></div>";
+			$strHTML .= "<div class=\"date last\">&nbsp;</div>";
+			$strHTML .= "<div class=\"beds last\">&nbsp;</div>";
 
 			// output the totals, etc.
-			$strHTML .= "<div style=\"width: 100%\">Date Range: ";
+			$strHTML .= "<div style=\"width: 100%\"><strong>Date Range:</strong> ";
 			$strHTML .= $strFirstDate . " through " . $strLastDate;
 			$strHTML .= "</div>";
 
-			$strHTML .= "<div style=\"width: 100%;\">Average Daily Beds over " . $intCountRecords . " Days: ";
+			$strHTML .= "<div style=\"width: 100%;\"><strong>Average Daily Beds over " . $intCountRecords . " Days:</strong> ";
 			$strHTML .= number_format($intStaffQtyTotal/$intCountRecords, 1);
 			$strHTML .= "</div>";
 
